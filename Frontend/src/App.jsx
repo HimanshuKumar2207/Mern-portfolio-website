@@ -20,7 +20,6 @@ import ProjectLayout from "./Pages/Project Admin/ProjectLayout";
 import AddProject from "./Pages/Project Admin/AddProject";
 import ListProject from "./Pages/Project Admin/ListProject";
 import ScrollToTop from "./components/ScrollToTop";
-import ClickEffect from "./components/ClickEffect";
 
 const App = () => {
   const { token } = useAppContext();
@@ -29,7 +28,6 @@ const App = () => {
       <div>
         <Toaster />
         <ScrollToTop />
-        <ClickEffect />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
