@@ -4,50 +4,99 @@ import Blog from "../models/Blog.js";
 import Comment from "../models/comment.js";
 import main from "../config/gemini.js";
 
+// export const addBlog = async (req, res) => {
+//   try {
+//     const { title, description, subTitle, category, isPublished } = JSON.parse(
+//       req.body.blog
+//     );
+
+//     const imageFile = req.file;
+
+//     //check if all field are available
+
+//     if (!title || !description || !category || !imageFile) {
+//       return res.json({ success: false, message: "Missing required Fileds" });
+//     }
+
+//     // const fileBuffer = imageFile.buffer;
+
+//     // upload image to imagekit
+//     const fileBuffer = fs.readFileSync(imageFile.path);
+//     const response = await imagekit.upload({
+//       file: fileBuffer,
+//       fileName: imageFile.originalname,
+//       folder: "/blogs",
+//       isPrivateFile: false,
+//     });
+
+//     //optimization through imagekit URl transformation
+
+//     const optimizedImageUrl = imagekit.url({
+//       path: response.filePath,
+//       transformation: [
+//         { quality: "auto" }, //Auto compression
+//         { format: "webp" }, // convert to modern format
+//         { width: 1280 }, // width resizing
+//       ],
+//     });
+
+//     const image = optimizedImageUrl;
+
+//     await Blog.create({
+//       title,
+//       subTitle,
+//       description,
+//       category,
+//       image,
+//       isPublished,
+//     });
+
+//     res.json({ success: true, message: "Blog added Successfully" });
+//   } catch (error) {
+//     res.json({ success: false, message: error.message });
+//   }
+// };
+
 export const addBlog = async (req, res) => {
   try {
     const { title, description, subTitle, category, isPublished } = JSON.parse(
       req.body.blog
     );
-
     const imageFile = req.file;
 
-    //check if all field are available
-
     if (!title || !description || !category || !imageFile) {
-      return res.json({ success: false, message: "Missing required Fileds" });
+      return res.json({ success: false, message: "Missing required fields" });
     }
-    // upload image to imagekit
-    const fileBuffer = fs.readFileSync(imageFile.path);
+
+    const fileBuffer = imageFile.buffer;
+
     const response = await imagekit.upload({
       file: fileBuffer,
       fileName: imageFile.originalname,
       folder: "/blogs",
+      isPrivateFile: false,
     });
 
-    //optimization through imagekit URl transformation
-
+    // ✅ correct transformation
     const optimizedImageUrl = imagekit.url({
-      path: response.filePath,
+      src: response.url, // ✅ pass full URL safely
       transformation: [
-        { quality: "auto" }, //Auto compression
-        { format: "webp" }, // convert to modern format
-        { width: 1280 }, // width resizing
+        { quality: "auto" },
+        { format: "webp" },
+        { width: 1280 },
       ],
     });
-
-    const image = optimizedImageUrl;
 
     await Blog.create({
       title,
       subTitle,
       description,
       category,
-      image,
+      image: optimizedImageUrl,
       isPublished,
     });
 
-    res.json({ success: true, message: "Blog added Successfully" });
+    res.json({ success: true, message: "Blog added successfully" });
   } catch (error) {
     res.json({ success: false, message: error.message });
   }
@@ -66,8 +115,9 @@ export const getBlogById = async (req, res) => {
   try {
     const { blogId } = req.params;
     const blog = await Blog.findById(blogId);
+
     if (!blog) {
-      res.json({ success: false, message: "Blog not found" });
+      return res.json({ success: false, message: "Blog not found" });
     }
     res.json({ success: true, blog });
   } catch (error) {
@@ -131,9 +181,8 @@ export const generateContent = async (req, res) => {
     const content = await main(
       prompt + " Generate a blog content for this topic in simple text format "
     );
-    res.json({success:true, content})
+    res.json({ success: true, content });
   } catch (error) {
-    res.json({success:false, message:error.message})
-
+    res.json({ success: false, message: error.message });
   }
 };

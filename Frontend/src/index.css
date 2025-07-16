@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 @import "tailwindcss";
-@import "slick-carousel/slick/slick.css";
-@import "slick-carousel/slick/slick-theme.css";
 @theme {
   --color-primary: oklch(0.58 0.25 279); /* Indigo (#4F46E5) */
   --color-secondary: oklch(0.4 0.1 230);

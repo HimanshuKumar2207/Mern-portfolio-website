@@ -63,7 +63,7 @@ const Blog = () => {
   useEffect(() => {
     fetchBlogData();
     fetchComments();
-  }, []);
+  }, [id]);
 
   return data ? (
     <>
@@ -96,7 +96,9 @@ const Blog = () => {
           {/* Comment section */}
 
           <div className="mt-14 mb-10 max-w-3xl mx-auto">
-            <p className="font-semibold mb-4">Comments ({comments?.length || 0})</p>
+            <p className="font-semibold mb-4">
+              Comments ({comments?.length || 0})
+            </p>
 
             <div className="flex flex-col gap-4">
               {comments.map((item, index) => (
