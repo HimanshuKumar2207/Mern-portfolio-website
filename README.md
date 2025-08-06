@@ -4,13 +4,15 @@ This is a **full-stack personal portfolio website** built with the **MERN stack*
 
 The site also includes a **dedicated Admin Panel** to manage **Projects** and **Blogs** (Add/List functionality) securely.
 
----
+
+
 
 ## 🌐 Live Preview
 
 👉 [View Live Portfolio](https://mern-portfolio-website-flame.vercel.app/)
 
----
+
+
 
 ## 🧩 Core Features
 
@@ -23,7 +25,8 @@ The site also includes a **dedicated Admin Panel** to manage **Projects** and **
 ✅ Protected admin routes using JWT authentication  
 ✅ Clean folder structure and scalable architecture  
 
----
+
+
 
 ## 🧠 Pages & Functional Overview
 
@@ -37,7 +40,8 @@ The site also includes a **dedicated Admin Panel** to manage **Projects** and **
 | 📬 **Contact**   | Contact form with backend support |
 | 🔐 **Admin Panel** | Add/List pages for managing projects and blogs |
 
----
+
+
 
 ## 🛠️ Tech Stack
 
@@ -57,69 +61,51 @@ The site also includes a **dedicated Admin Panel** to manage **Projects** and **
 
 ---
 
-## 📁 Folder Structure (Simplified)
+### 📁 Folder Structure (Simplified)
 
-portfolio/
-├── Frontend/ # Frontend React App
-│ ├── src/
-│ │ ├── components/ # Reusable components
-│ │ ├── pages/ # Page-level components (Home, About, etc.)
-│ │ └── App.jsx # Main app entry point
-├── Backend/ # Backend Express API
-│ ├── controllers/ # Request logic
-  ├── config
-│ ├── models/ # MongoDB models
-│ ├── routes/ # Express routes
-│ └── server.js # Server entry point
-├── .env
-├── package.json
-└── README.md
+<pre lang="text"><code>```bash portfolio/ ├── Frontend/ # Frontend React App │ ├── src/ │ │ ├── components/ # Reusable components │ │ ├── pages/ # Page-level components (Home, About, etc.) │ │ └── App.jsx # Main app entry point ├── Backend/ # Backend Express API │ ├── controllers/ # Request logic │ ├── config/ # DB config and environment setup │ ├── models/ # MongoDB models │ ├── routes/ # Express routes │ └── server.js # Server entry point ├── .env ├── package.json └── README.md ```</code></pre>
 
-1. Configure Environment Variables
+## 1. Configure Environment Variables
 
-PORT=4000
-MONGO_URI=your_mongo_db_uri
-JWT_SECRET=your_jwt_secret
-CLOUDINARY_CLOUD_NAME=your_cloudinary_name
-CLOUDINARY_API_KEY=your_cloudinary_key
-CLOUDINARY_API_SECRET=your_cloudinary_secret
+<pre lang="text"><code>```env PORT=4000 MONGO_URI=your_mongo_db_uri JWT_SECRET=your_jwt_secret CLOUDINARY_CLOUD_NAME=your_cloudinary_name CLOUDINARY_API_KEY=your_cloudinary_key CLOUDINARY_API_SECRET=your_cloudinary_secret ```</code></pre>
 
-2. Install Dependencies
+## 2. Install Dependencies
  
 # Backend
-cd Backend
-npm install
+ <pre lang="text"><code> cd Backend
+npm install ```</code></pre>
 
 # Frontend
-cd Frontend
-npm install
+ <pre lang="text"><code> cd Frontend
+npm install ```</code></pre>
 
-3. Run the App
+## 3. Run the App
 
 # Start backend
-cd Backend
-npm run server
+ <pre lang="text"><code> cd Backend
+npm run server ```</code></pre>
 
 # Start frontend
-cd Frontend
-npm run dev
+<pre lang="text"><code> cd Frontend
+npm run dev ```</code></pre>
 
-🔐 Admin Panel Overview
-    Secure login (JWT Auth)
+## 🔐 Admin Panel Overview
+  <pre lang="text"><code>  Secure login (JWT Auth)
     Separate Add & List sections for:
     🛠 Projects: through /project-admin
     ✍️ Blogs: through /admin
      Form validation and error handling
-     Image upload via Cloudinary
+     Image upload via Cloudinary ```</code></pre>
 
-📬 Contact
-    📧 Email: himanshukeshri986@gmail.com
+## 📬 Contact
+  <pre lang="text"><code>  📧 Email: himanshukeshri986@gmail.com
     📱 Phone: +91 7479867857
     🌍 Location: Patna, Bihar, India
-    🔗 LinkedIn: https://www.linkedin.com/in/himanshu-kumar-40663122b/
+    🔗 LinkedIn: https://www.linkedin.com/in/himanshu-kumar-40663122b/ ```</code></pre>
 
-⭐ Acknowledgements
+## ⭐ Acknowledgements
+<pre lang="text"><code>
      React.js and Tailwind CSS community
      MongoDB & Mongoose for seamless backend
      Cloudinary & ImageKit for image storage
-     Framer Motion / GSAP for UI animation
+     Framer Motion / GSAP for UI animation ```</code></pre>
