@@ -1,6 +1,6 @@
 # 🚀 Himanshu Kumar – MERN Personal Portfolio Website
 
-This is a **full-stack personal portfolio website** built with the **MERN stack** (MongoDB, Express.js, React.js, Node.js). It showcases all major aspects of my professional profile including **Home, About, Expertise, Projects, Blogs, and Contact** pages — all integrated into a clean, modern, and responsive design.
+This is a **full-stack personal portfolio website** built with the **MERN stack** (MongoDB, Express.js, React.js, Node.js). It showcases all major aspects of my professional profile including **Home, About, Expertise, Projects, Blogs, and Contact** pages — all integrated into a clean, modern, and responsive design
 
 The site also includes a **dedicated Admin Panel** to manage **Projects** and **Blogs** (Add/List functionality) securely.
 
