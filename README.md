@@ -4,13 +4,13 @@ This is a **full-stack personal portfolio website** built with the **MERN stack*
 
 The site also includes a **dedicated Admin Panel** to manage **Projects** and **Blogs** (Add/List functionality) securely.
 
----
+
 
 ## 🌐 Live Preview
 
 👉 [View Live Portfolio](https://mern-portfolio-website-flame.vercel.app/)
 
----
+
 
 ## 🧩 Core Features
 
@@ -23,7 +23,7 @@ The site also includes a **dedicated Admin Panel** to manage **Projects** and **
 - ✅ Protected admin routes using JWT authentication  
 - ✅ Clean folder structure and scalable architecture  
 
----
+
 
 ## 🧠 Pages & Functional Overview
 
@@ -37,7 +37,7 @@ The site also includes a **dedicated Admin Panel** to manage **Projects** and **
 | 📬 **Contact**     | Contact form with backend integration                                      |
 | 🔐 **Admin Panel** | Add/List functionality for Projects & Blogs with secure login              |
 
----
+
 
 ## 🛠️ Tech Stack
 
